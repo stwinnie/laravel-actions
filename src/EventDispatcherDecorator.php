@@ -18,7 +18,7 @@ class EventDispatcherDecorator implements DispatcherContract
         $this->container = $container;
     }
 
-    public function listen($events, $listener)
+    public function listen($events, $listener = NULL)
     {
         if ($this->isActionFullyQualifiedName($listener)) {
             $listener = $listener . '@runAsListener';
